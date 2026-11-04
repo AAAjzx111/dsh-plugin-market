@@ -16,7 +16,7 @@
 plugins/                  # 每个插件一个 JSON 描述文件
   dsh-plugins-<id>.json
 scripts/
-  aggregate.mjs           # 聚合脚本：plugins/*.json → plugins.json
+  aggregate.ts           # 聚合脚本：plugins/*.json → plugins.json
 plugins.json              # 聚合产物（由 workflow 自动维护）
 .github/workflows/
   aggregate.yml           # push 到 plugins/ 时聚合 + 通知站点仓库
@@ -99,3 +99,17 @@ plugins.json              # 聚合产物（由 workflow 自动维护）
 >
 > 配置 `PLUGIN_MARKET_PAT` 后，每次向 `plugins/` 推送，站点仓库会自动
 > 同步并部署，无需手动触发。
+
+## 本地开发
+
+使用 Node.js 22 或更新版本，以及 `package.json` 中指定的 pnpm 版本。
+
+```sh
+pnpm install --frozen-lockfile
+pnpm typecheck
+pnpm test
+pnpm build
+```
+
+脚本与测试使用严格模式的 TypeScript，编译产物位于被 Git 忽略的 `dist/`
+目录。`pnpm build` 仍将 `plugins.json` 写入仓库根目录，发布流程保持不变。

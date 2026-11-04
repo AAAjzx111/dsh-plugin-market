@@ -1,8 +1,8 @@
 import semver from 'semver';
 
 /** 将市场版本声明转换为 npm 范围，避免各调用方对区间边界作不同解释。 */
-export function normalizeRange(value, context = '版本范围') {
-  const fail = (message) => { throw new Error(`${context}: ${message}`); };
+export function normalizeRange(value: unknown, context = '版本范围'): string {
+  const fail = (message: string): never => { throw new Error(`${context}: ${message}`); };
   if (value === undefined || value === null) {
     return '*';
   }
@@ -58,12 +58,12 @@ export function normalizeRange(value, context = '版本范围') {
 }
 
 /** 预发布版本参与范围比较，与官方市场的兼容性判断一致。 */
-export function matchesRange(value, version) {
+export function matchesRange(value: unknown, version: string): boolean {
   return semver.satisfies(version, normalizeRange(value), { includePrerelease: true });
 }
 
 /** GitHub 提交哈希只接受字符串，避免正则隐式转换数组或数字。 */
-export function validateRelationship(relation, context) {
+export function validateRelationship(relation: { id: string; versions?: unknown }, context: string): void {
   if (relation.id.startsWith('github:') && typeof relation.versions === 'string'
       && /^[a-f0-9]{7,40}$/i.test(relation.versions)) {
     return;

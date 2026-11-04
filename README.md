@@ -16,11 +16,26 @@ English | [简体中文](README.zh_CN.md)
 plugins/                  # One JSON descriptor file per plugin
   dsh-plugins-<id>.json
 scripts/
-  aggregate.mjs           # Aggregation script: plugins/*.json → plugins.json
+  aggregate.ts           # Aggregation script: plugins/*.json → plugins.json
 plugins.json              # Aggregated output (maintained by the workflow)
 .github/workflows/
   aggregate.yml           # Aggregates on push to plugins/ + notifies the site repo
 ```
+
+## Development
+
+Use Node.js 22 or later and the pnpm version declared in `package.json`.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm typecheck
+pnpm test
+pnpm build
+```
+
+The scripts and tests are written in strict TypeScript. Tests and builds compile
+into the ignored `dist/` directory; `pnpm build` still writes `plugins.json` at
+the repository root. Generated descriptors and the publishing workflow are unchanged.
 
 ## Plugin Descriptor Format
 
