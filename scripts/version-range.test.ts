@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { matchesRange, normalizeRange, validateRelationship } from './version-range.mjs';
+import { matchesRange, normalizeRange, validateRelationship } from './version-range.js';
 
 test('多个区间取并集并保留端点与间隙', () => {
   const range = '[0.1.0-rc.6,0.2.0-rc.1);[0.2.1-rc.4,)';

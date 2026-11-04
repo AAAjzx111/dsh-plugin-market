@@ -4,10 +4,17 @@
   "type": "module",
   "packageManager": "pnpm@11.17.0",
   "scripts": {
-    "build": "node scripts/aggregate.mjs",
-    "test": "node --test scripts/*.test.mjs"
+    "compile": "tsc",
+    "typecheck": "tsc --noEmit",
+    "build": "pnpm compile && node dist/aggregate.js",
+    "test": "pnpm compile && node --test dist/*.test.js"
   },
   "dependencies": {
     "semver": "7.8.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/semver": "^7.8.0",
+    "typescript": "^5.9.3"
   }
 }

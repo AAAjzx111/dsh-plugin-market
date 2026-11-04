@@ -6,7 +6,7 @@ name: Aggregate plugin descriptors
 on:
   push:
     branches: [main]
-    paths: ['plugins/**', 'scripts/**', 'package.json', 'pnpm-lock.yaml', '.github/workflows/aggregate.yml']
+    paths: ['plugins/**', 'scripts/**', 'package.json', 'pnpm-lock.yaml', 'tsconfig.json', '.github/workflows/aggregate.yml']
   workflow_dispatch:
 
 permissions:
@@ -32,6 +32,7 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
 
