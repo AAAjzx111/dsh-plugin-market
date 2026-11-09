@@ -1,0 +1,27 @@
+{
+  "id": "@dsh-plugin/dsh-web-search",
+  "name": "DSH Web Search (Browser)",
+  "description": [
+    {
+      "language": "en-US",
+      "content": "Browser-backed web_search and web_fetch: real Chromium/Firefox/WebKit pages via Playwright, analyzed by a configured model, with subagent page interaction"
+    },
+    {
+      "language": "zh-CN",
+      "content": "基于真实浏览器的 web_search 与 web_fetch：Playwright 驱动本机 Chromium/Firefox/WebKit 打开页面，由配置的模型分析页面，支持子代理操作页面交互"
+    }
+  ],
+  "support_versions": "[0.1.5,)",
+  "urls": {
+    "homepage": "https://github.com/dsh-plugins/dsh-web-search",
+    "repository": "https://github.com/dsh-plugins/dsh-web-search",
+    "issues": "https://github.com/dsh-plugins/dsh-web-search/issues"
+  },
+  "relationship": [
+    {
+      "type": "dependency",
+      "id": "@dsh-plugin/dsh-loader",
+      "versions": "^2.0.0-0"
+    }
+  ]
+}
