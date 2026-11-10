@@ -113,6 +113,33 @@
     ]
   },
   {
+    "id": "@dsh-plugin/dsh-force-read-skill",
+    "name": "DSH Force Read Skill",
+    "description": [
+      {
+        "language": "en-US",
+        "content": "Require the model to read an eligible skill before using other tools. Successful reads apply to the current session until context compaction."
+      },
+      {
+        "language": "zh-CN",
+        "content": "要求模型先读取符合配置的 SKILL，再使用其他工具。已读状态在当前会话内持续至下一次成功的上下文压缩。"
+      }
+    ],
+    "support_versions": "[0.1.5,)",
+    "urls": {
+      "homepage": "https://github.com/dsh-plugins/dsh-force-read-skill",
+      "repository": "https://github.com/dsh-plugins/dsh-force-read-skill",
+      "issues": "https://github.com/dsh-plugins/dsh-force-read-skill/issues"
+    },
+    "relationship": [
+      {
+        "type": "dependency",
+        "id": "@dsh-plugin/dsh-loader",
+        "versions": "^2.0.0-dev.42783642741"
+      }
+    ]
+  },
+  {
     "id": "@dsh-plugin/dsh-loader",
     "name": "DSH Loader",
     "description": [
