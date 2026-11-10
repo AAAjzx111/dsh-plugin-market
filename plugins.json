@@ -139,11 +139,11 @@
     "description": [
       {
         "language": "en-US",
-        "content": "User-Agent rewriting, HTTP/CONNECT/SOCKS5 proxy, and configurable request auto-retry in one Network settings tab"
+        "content": "User-Agent rewriting, HTTP/CONNECT/SOCKS5 proxy, and request retries. The next channel adds configurable response idle timeouts for HTTP and pi-ai."
       },
       {
         "language": "zh-CN",
-        "content": "User-Agent 改写、HTTP/CONNECT/SOCKS5 代理与可配置请求自动重试，统一在「网络设置」标签页"
+        "content": "支持 User-Agent 改写、HTTP/CONNECT/SOCKS5 代理和请求重试。开发版新增可配置的 HTTP 与 pi-ai 响应空闲超时。"
       }
     ],
     "support_versions": "[0.1.5,)",
