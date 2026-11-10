@@ -4,11 +4,11 @@
   "description": [
     {
       "language": "en-US",
-      "content": "Browser-backed web_search and web_fetch: real Chromium/Firefox/WebKit pages via Playwright, analyzed by a configured model, with subagent page interaction"
+      "content": "Local browser tools browser_web_search and browser_web_fetch with validated search results, text or Markdown extraction, and optional persistent browser sessions."
     },
     {
       "language": "zh-CN",
-      "content": "基于真实浏览器的 web_search 与 web_fetch：Playwright 驱动本机 Chromium/Firefox/WebKit 打开页面，由配置的模型分析页面，支持子代理操作页面交互"
+      "content": "通过本机浏览器提供 browser_web_search 和 browser_web_fetch，支持搜索结果校验、纯文本或 Markdown 提取，以及可选的持久化浏览器会话。"
     }
   ],
   "support_versions": "[0.1.5,)",
