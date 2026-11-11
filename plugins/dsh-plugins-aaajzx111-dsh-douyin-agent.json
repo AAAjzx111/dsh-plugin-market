@@ -1,0 +1,27 @@
+{
+  "id": "github:AAAjzx111/dsh-douyin-agent",
+  "name": "DSH 抖音助手（改编版）",
+  "description": [
+    {
+      "language": "zh-CN",
+      "content": "基于 dafeiyu1314520/dsh-douyin-agent 1.4.7 改编的抖音插件（原作者 dafeiyu1314520，其上游为 LockyBee/dsh-douyin-agent，MIT，署名与许可均保留）。观看、人格、兴趣、日报沿用原作，改动集中在私信自动回复与自动问候两条链路：修复关注名单读取 90 秒超时、私信工具队列自锁、窗口最小化/拖出屏幕导致会话点不开、换头像后会话 id 失配被永久暂停、只认 new-tail 造成的已读不回、单独发的表情被读成空文本、暂停后不自愈、兜底扫描被死红点挡住；自动问候不再因回执不确定而停机并需人工核对，改为下一轮自动回读会话收尾；去掉「[自动回复]/[自动问候]」前缀；新增 DSH 启动后自动拉起这两项服务。与 npm 包 dsh-douyin-agent 互斥（同一 bundle id，请二选一）。"
+    },
+    {
+      "language": "en-US",
+      "content": "Modified fork of dafeiyu1314520/dsh-douyin-agent 1.4.7 (original author dafeiyu1314520, itself based on LockyBee/dsh-douyin-agent, MIT, attribution and license preserved). Watching, persona, interests and daily report are unchanged; changes target the direct-message auto-reply and daily greeting pipelines: fix the 90s follow-list read timeout, the private-tool queue self-lock, unclickable conversations when the Edge window is minimized or off-screen, permanently paused contacts after an avatar change, missed replies caused by only trusting the new-tail classification, emoji-only messages being read as empty text, paused contacts never recovering, and the fallback sweep being blocked by a stale unread badge; greetings no longer halt and demand manual review when the delivery receipt is uncertain — the next tick re-reads the chat and settles it; drop the [自动回复]/[自动问候] prefixes; auto-start both services after DSH boots. Declared incompatible with the npm package dsh-douyin-agent (same bundle id — install one of them)."
+    }
+  ],
+  "support_versions": ">=0.2.0-rc.2 <0.3.0",
+  "urls": {
+    "homepage": "https://github.com/AAAjzx111/dsh-douyin-agent",
+    "repository": "https://github.com/AAAjzx111/dsh-douyin-agent",
+    "issues": "https://github.com/AAAjzx111/dsh-douyin-agent/issues"
+  },
+  "relationship": [
+    {
+      "type": "incompatibility",
+      "id": "dsh-douyin-agent",
+      "versions": "*"
+    }
+  ]
+}
